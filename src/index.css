@@ -1,0 +1,331 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #f8f5ed;
+  background: #050711;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+@keyframes cosmic-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cosmic-orbit {
+  animation: cosmic-orbit 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cosmic-orbit {
+    animation: none;
+  }
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* COSMIC ATELIER — TECHNICAL ENERGY */
+
+.hero-energy-pulse {
+  opacity: 0.7;
+  animation: energy-flow 9s linear infinite;
+}
+
+.hero-energy-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: energy-node 4s ease-in-out infinite;
+}
+
+.hero-energy-aura {
+  animation: energy-breathe 8s ease-in-out infinite;
+}
+
+@keyframes energy-flow {
+  from {
+    stroke-dashoffset: 1690;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes energy-node {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes energy-breathe {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-energy-pulse,
+  .hero-energy-node,
+  .hero-energy-aura {
+    animation: none;
+  }
+}
+
+/* COSMIC ATELIER — EDUCATION ENERGY TIMELINE */
+
+.education-energy-flow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(216, 174, 85, 0.25) 20%,
+    #ffe9a3 50%,
+    rgba(216, 174, 85, 0.25) 80%,
+    transparent 100%
+  );
+
+  box-shadow:
+    0 0 8px rgba(255, 214, 125, 0.5),
+    0 0 18px rgba(226, 170, 67, 0.2);
+
+  animation: education-energy-travel 6s linear infinite;
+}
+
+@keyframes education-energy-travel {
+  from {
+    top: -90px;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-energy-flow {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* COSMIC ATELIER — ELECTRIC GOLD EDUCATION CARDS */
+
+.education-aura-card {
+  isolation: isolate;
+}
+
+.education-aura-border {
+  z-index: 0;
+  padding: 1.5px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 245deg,
+    rgba(195, 137, 43, 0.45) 275deg,
+    #ffe9a3 310deg,
+    #d4a646 335deg,
+    transparent 360deg
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  animation: education-border-energy 5s linear infinite;
+  transition: opacity 0.4s ease;
+}
+
+.education-aura-card:hover .education-aura-border,
+.education-aura-card:focus-within .education-aura-border,
+.education-aura-active .education-aura-border {
+  opacity: 1;
+}
+
+.education-aura-card:hover,
+.education-aura-card:focus-within,
+.education-aura-active {
+  box-shadow:
+    0 0 25px rgba(229, 183, 91, 0.12),
+    0 0 65px rgba(229, 183, 91, 0.045);
+}
+
+@keyframes education-border-energy {
+  from {
+    transform: rotate(0deg) scale(1.8);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-aura-border {
+    animation: none;
+  }
+}
+
+/* COSMIC ATELIER — PREMIUM SKILL EXPLORER */
+
+.skill-explorer-card {
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
+}
+
+.skill-explorer-card:hover,
+.skill-explorer-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.18),
+    0 0 30px rgba(226, 188, 104, 0.07);
+}
+
+/* Code: subtle illumination */
+.skill-code-line {
+  transition: filter 0.5s ease;
+}
+
+.skill-explorer-card:hover .skill-code-line {
+  filter: drop-shadow(0 0 5px #e4c381);
+}
+
+.skill-code-dot {
+  opacity: 0.4;
+}
+
+.skill-explorer-card:hover .skill-code-dot {
+  animation: skill-gold-pulse 2s ease-in-out infinite;
+}
+
+/* Security: scanning line */
+.skill-explorer-card:hover .skill-shield-scan {
+  opacity: 0.8;
+  animation: skill-scan 2.8s ease-in-out infinite;
+}
+
+/* Data: illuminating graph */
+.skill-explorer-card:hover .skill-data-line {
+  filter: drop-shadow(0 0 4px #e4c381);
+}
+
+.skill-explorer-card:hover .skill-data-dot {
+  animation: skill-gold-pulse 2.5s ease-in-out infinite;
+}
+
+/* People: connecting pulse */
+.skill-explorer-card:hover .skill-people-link {
+  animation: skill-gold-pulse 2.5s ease-in-out infinite;
+}
+
+/* Creative: drawing stroke */
+.skill-pencil-stroke {
+  stroke-dasharray: 140;
+  stroke-dashoffset: 0;
+}
+
+.skill-explorer-card:hover .skill-pencil-stroke {
+  animation: skill-pencil-draw 3s ease-in-out infinite;
+}
+
+@keyframes skill-gold-pulse {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px #ffe8ad);
+  }
+}
+
+@keyframes skill-scan {
+  0%, 100% {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(16px);
+    opacity: 0.85;
+  }
+}
+
+@keyframes skill-pencil-draw {
+  0% {
+    stroke-dashoffset: 140;
+  }
+  60%, 100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-explorer-card,
+  .skill-explorer-card:hover,
+  .skill-explorer-card:focus-within {
+    transform: none;
+    transition: none;
+  }
+
+  .skill-explorer-card *,
+  .skill-explorer-card:hover * {
+    animation: none !important;
+  }
+}
