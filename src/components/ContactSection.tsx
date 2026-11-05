@@ -18,7 +18,7 @@ const EMAIL = 'nanthakkishok08@gmail.com'
 const GITHUB = 'https://github.com/Kishok08'
 
 // Add your verified LinkedIn URL when ready.
-const LINKEDIN = 'www.linkedin.com/in/kishok-nanthakumar-0671b6251'
+const LINKEDIN = 'http://www.linkedin.com/in/kishok-nanthakumar-0671b6251'
 
 const contactLinks = [
   {
