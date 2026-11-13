@@ -148,7 +148,7 @@ transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               </motion.a>
 
               <a
-                href="/Kishok-Nanthakumar-CV.pdf"
+                href="/Kishok_Nanthakumar_CV.pdf"
                 download
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.035] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:border-amber-300/40 hover:bg-white/[0.07]"
               >

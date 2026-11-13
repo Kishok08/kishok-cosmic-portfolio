@@ -28,6 +28,7 @@ type Project = {
   details: string[]
   tech: string[]
   github?: string
+  live?: string   
   images?: string[]
 }
 
@@ -46,6 +47,7 @@ const projects: Project[] = [
       'Designing reusable components and intuitive interfaces.',
     ],
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    live: 'https://earnova-peach.vercel.app/',
     // github: 'https://github.com/Kishok08/actual-repository',
   },
   {
@@ -53,14 +55,18 @@ const projects: Project[] = [
     category: 'Cybersecurity',
     status: 'Academic project',
     description:
-      'A Flask-based tool designed to identify front-end quality and security issues using automated testing tools.',
-    details: [
-      'Integrated Google Lighthouse for website quality analysis.',
-      'Used OWASP ZAP for web security assessment.',
-      'Developed a reporting workflow for presenting findings.',
-    ],
-    tech: ['Python', 'Flask', 'Lighthouse', 'OWASP ZAP'],
-  },
+    'A web security intelligence platform for analysing authorised websites, reviewing findings and producing security audit reports.',
+  details: [
+    'Passive website security and HTTP header checks.',
+    'Severity-based findings and remediation tracking.',
+    'PDF and JSON security report exports.',
+    'Scan history and security trend visualisations.',
+    'Railway backend with PostgreSQL persistence.',
+  ],
+  tech: ['React', 'TypeScript', 'Cybersecurity', 'PostgreSQL'],
+  live: 'https://frontguard-ai-platform.vercel.app/',
+  // GitHub repository is private.
+},
   {
     title: 'Crime Heatmap & Public Dashboard',
     category: 'Full Stack',
@@ -73,20 +79,25 @@ const projects: Project[] = [
       'Worked with a database-backed data delivery workflow.',
     ],
     tech: ['PHP', 'MySQL', 'Leaflet', 'Chart.js', 'Tailwind CSS'],
+    live: 'https://crimescope-uk.vercel.app/',
   },
   {
-    title: 'Penetration Testing Toolkit',
-    category: 'Cybersecurity',
-    status: 'In progress',
-    description:
-      'A Python toolkit exploring security assessment workflows and reporting.',
-    details: [
-      'Developing network-scanning functionality using Nmap.',
-      'Exploring DNS and domain information gathering.',
-      'Planning additional security checks and PDF reporting.',
-    ],
-    tech: ['Python', 'Nmap', 'DNS', 'PDF Reporting'],
-  },
+  title: 'BIMGuard — BIM Model Intelligence',
+  category: 'Full Stack',
+  status: 'Live prototype',
+  description:
+    'A browser-based BIM intelligence platform for reviewing IFC building models, inspecting 3D geometry and tracking model quality findings.',
+  details: [
+    'Upload and inspect Industry Foundation Classes (IFC) files.',
+    'Interactive 3D model viewer with element selection.',
+    'Detect model information and reference inconsistencies.',
+    'Compare model revisions and export review findings.',
+    'Model inspection using Web-IFC and Three.js.',
+  ],
+  tech: ['TypeScript', 'Three.js', 'Web-IFC', 'BIM'],
+  live: 'https://bimguard-model-lab.vercel.app/',
+  // GitHub repository is private.
+},
   {
     title: 'Taxi Management System',
     category: 'Full Stack',
@@ -389,6 +400,18 @@ export default function ProjectsSection() {
                       <ArrowUpRight size={16} />
                     </button>
 
+{project.live && (
+  <a
+    href={project.live}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full bg-amber-300 px-4 py-2 text-xs font-semibold text-slate-950 transition-all hover:bg-amber-200 hover:scale-105"
+  >
+    <ExternalLink size={15} />
+    Live Demo
+  </a>
+)}
+
                     {project.github && !isDesign && (
                       <a
                         href={project.github}
@@ -556,6 +579,18 @@ export default function ProjectsSection() {
                   </span>
                 ))}
               </div>
+
+{selected.live && (
+  <a
+    href={selected.live}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-8 mr-3 inline-flex items-center gap-2 rounded-full bg-amber-300 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-all hover:bg-amber-200"
+  >
+    <ExternalLink size={17} />
+    Launch Live Project
+  </a>
+)}
 
               {selected.github && selected.category !== 'UI / UX' && (
                 <a
