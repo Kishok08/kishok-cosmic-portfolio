@@ -7,6 +7,7 @@ import {
   Palette,
   MapPin,
   BriefcaseBusiness,
+   Building2,
 } from 'lucide-react'
 
 const interests = [
@@ -30,6 +31,13 @@ const interests = [
     title: 'Creative Technology',
     description:
       'Interface design, data visualisation and user-focused experiences.',
+  },
+  {
+    icon: Building2,
+    number: '04',
+    title: 'Digital Construction & BIM',
+    description:
+      'Exploring Building Information Modelling (BIM), IFC model coordination, digital workflows and construction information management.',
   },
 ]
 
@@ -97,7 +105,7 @@ export default function AboutSection() {
 
           <p className="mt-5 text-base leading-8 text-slate-400">
             My interests span software development,
-            cybersecurity, data visualisation and creative
+            cybersecurity, data visualisation, digital construction technologies and creative
             design. I bring together analytical thinking,
             problem-solving and an appreciation for
             intuitive user experiences.
@@ -159,7 +167,7 @@ export default function AboutSection() {
 
             <p className="mt-4 text-sm leading-7 text-slate-400">
               Particularly interested in software
-              development, IT support, cybersecurity
+              development, IT support, cybersecurity, digital construction,
               and related technical roles.
             </p>
           </div>
@@ -188,7 +196,7 @@ export default function AboutSection() {
           <span className="h-px flex-1 bg-gradient-to-r from-white/15 to-transparent" />
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {interests.map((item, index) => {
             const Icon = item.icon
 
